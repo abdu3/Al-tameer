@@ -13,8 +13,8 @@ class contact extends Model
         'name',
         'type',
         'location',
+        'phoneNum',
         'whatsappNum',
-        'PhoneNum',
         'message',
     ];
     protected $hidden=[

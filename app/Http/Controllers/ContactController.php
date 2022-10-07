@@ -21,7 +21,6 @@ class ContactController extends Controller
         return $rules =[
             'name'=>'required',
             'type'=>'required',
-            'location'=>'string',
             'PhoneNum'=>'required',
             'whatsappNum'=>'required',
             'message'=>'required'
@@ -32,7 +31,6 @@ class ContactController extends Controller
         return $messages =[
             'name.required'=>__('main.name required'),
             'type.required'=>__('main.type required'),
-            'location.string'=>'',
             'PhoneNum.required'=>__('main.PhoneNum required'),
             'whatsappNum.required'=>__('main.whatsappNum required'),
             'message.required'=>__('main.message required')
@@ -51,7 +49,7 @@ class ContactController extends Controller
             return redirect()->back()->withErrors($validate)->withInput($request->all());
          }
 
-
+        //  dd($request->PhoneNum);
         Contact::create([
             'name'=>$request->name,
             'type'=>$request->type,
