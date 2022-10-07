@@ -162,4 +162,6 @@ return [
 'PhoneNum required'=>'يجب ادخال رقم الهاتف',
 'whatsappNum required'=>'يجب ادخال رقم الواتس اب',
 
+"successMessage"=>'تم ارسال الطلب بنجاح',
+
 ];

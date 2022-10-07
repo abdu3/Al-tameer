@@ -60,7 +60,7 @@ class ContactController extends Controller
         ]);
 
 
-      return back()->with('success','successfully send.'); ;
+      return back()->with('success',__('main.successMessage')); ;
 
     }
 

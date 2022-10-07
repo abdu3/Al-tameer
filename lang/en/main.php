@@ -146,5 +146,5 @@ return [
 'PhoneNum required'=>'The phone number Field is requires',
 'whatsappNum required'=>'The whatsapp number  Field is requires',
 
-
+"successMessage"=>'successfully send.',
 ];
