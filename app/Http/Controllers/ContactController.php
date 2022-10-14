@@ -65,8 +65,12 @@ class ContactController extends Controller
     }
 
     public function show(){
+        return view('admin.dashboard',['messages'=>Contact::latest()->paginate(6)]);
+    }
+    public function delete(Contact $contact){
+        $contact->delete();
 
-        return view('admin.dashboard',['messages'=>Contact::all()]);
+        return back()->with('success', 'Message Deleted!');
     }
 
     public function signup()

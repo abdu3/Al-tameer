@@ -43,6 +43,10 @@ Route::get('gallery', function () {
 Route::get('contact', function () {
     return view('contact');
 });
+Route::get('contact', function () {
+    return view('contact');
+});
+Route::delete('contact/{contact}',[ContactController::class,'delete'])->name('contact.delete');
 
 
 Route::get('/login',[ContactController::class,'signup'])->name('login');

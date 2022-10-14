@@ -101,6 +101,14 @@ div.content {
            </div>
         </div>
     </div>
+
+    @if (session()->has('success'))
+<!-- This is an example component -->
+<div class="alert alert-success">
+    <strong>{{session('success')}}</strong>
+  </div>
+@endif
+
     <table class="table table-striped">
         <thead>
           <tr>
@@ -110,6 +118,7 @@ div.content {
             <th scope="col"> {{__('main.cont-phone')}}</th>
             <th scope="col">{{__("main.cont-Whatsapp")}}</th>
             <th scope="col">{{__('main.cont-message')}}</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -121,10 +130,19 @@ div.content {
           <td>{{$message->phoneNum}}</td>
           <td>{{$message->whatsappNum}}</td>
           <td class="wrap" >{{$message->message}}</td>
+          <td class="wrap" > <form method="POST" action="{{ route('contact.delete',$message->id)}}">
+            @csrf
+            @method('DELETE')
+
+            <button class="btn btn-danger">Delete</button>
+        </form></td>
         </tr>
         @endforeach
         </tbody>
       </table>
+      <div class="d-flex">
+        {!! $messages->links() !!}
+    </div>
 </div>
 @endsection
 
