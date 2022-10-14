@@ -38,6 +38,7 @@
              @yield('content')
 
             <!-- Javascript files-->
+
             <script src="{{URL::asset('js/jquery.min.js')}}"></script>
             <script src="{{URL::asset('js/bootstrap.bundle.min.js')}} "></script>
             <script src="{{URL::asset('js/jquery-3.0.0.min.js')}} "></script>

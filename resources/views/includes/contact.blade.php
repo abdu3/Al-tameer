@@ -3,9 +3,14 @@
     {{-- @include('includes.flash'); --}}
     <div class="container">
         @if (session()->has('success'))
-        <div class="alert alert-success" role="alert">
-            {{session('success')}}
-          </div>
+        <script type="text/javascript">
+        setTimeout(() => {
+            let popup = document.getElementById("popup");
+            console.log(popup);
+            popup.classList.add("open-popup");
+        }, 3000);
+
+        </script>
         @endif
        <div class="row">
           <div class="col-md-12">
@@ -66,6 +71,88 @@
              </div>
           </div>
        </div>
+
     </div>
+
  </div>
+    <div class="popup" id="popup">
+        <img src="{{URL::asset('images/404-tick.gif')}}">
+        <h2>Thank you </h2>
+        <p>Your details has been successfully submitted . Thanks!</p>
+        <button type="button" onclick="document.getElementById('popup').classList.add('close-popup')">OK</button>
+     </div>
+
  <!-- end contact -->
+
+
+
+<style>
+    .send_btn{
+    padding: 10px 60px;
+    background: #fff;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 30px;
+
+}
+
+.popup{
+    width: 400px;
+    background: #ffffff;
+    border-radius: 6px;
+    position: absolute;
+    top: 180%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1) ;
+    text-align: center;
+    padding: 0 30px 30px;
+    color: blue;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+.close-popup{
+    visibility: hidden;
+    top: 0%;
+    /* transform: translate(-50%,-50%) scale(0.1); */
+}
+
+
+.popup img{
+    width: 100px;
+     margin-top: 0%;
+     border-radius: 0%;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+
+}
+
+.popup button{
+    width: 100%;
+    margin-top:50px ;
+    padding: 10px 0 ;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius:4px ;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+
+
+}
+</style>
